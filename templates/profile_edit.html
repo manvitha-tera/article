@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h3>Update Profile</h3>
+<a href="{% url 'password_change' %}"> Change Password</a>
+
+<form  method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+<!--<h4 align="center" style="color: green">{{ message }}</h4>-->
+
+<!--<h4 align="center" > <a href="{% url 'dashboard' %}" >Return to Dashboard</a> </h4>-->
+
+
+
+</body>
+</html>

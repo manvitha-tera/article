@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<form action="{% url 'created' %}"  method="post">
+    {% csrf_token %}
+    <table align="center" border="1">
+         <tr>
+            <th colspan="2">Create Article</th>
+        </tr>
+        <tr>
+            <td>Author</td>
+            <td><input type="text" readonly name="user" value="{{ request.user }}" aria-readonly="true"></td>
+        </tr>
+         
+        <td>Topic</td>
+        <td>
+            <form>
+                 <select name = "dropdown">
+                    <option value = "Architecture" selected>Architecture</option>
+                    <option value = "News">News</option>
+                    <option value = "Health">Health</option>
+                 </select>
+            </form>
+        </td>
+        
+        <tr>
+            <td>Title</td>
+            <td>
+                <input type="text" placeholder="title" name="title" required>
+            </td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>
+                <input type="text" placeholder="data" name="data" required>
+            </td>
+        </tr>
+        <tr> <th align="center" colspan="2"> <input type="submit" value="Submit"></th></tr>
+
+
+
+    </table>
+</form>
+</body>
+</html>
+
+
+<!--{{form.as_p}}-->

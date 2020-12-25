@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<h1>Dashboard</h1>
+
+
+<form  method="GET"  >
+    <input  type="search" name="search" >
+    <button  type="submit"> Search </button>
+</form>
+
+</body>
+</html>
+
+
+
+ <a href="{% url 'article_create' %}">create Article</a>
+
+ <a href="{% url 'unpublished_article' %}">unpublished Article</a>
+
+
+ <a href="{% url 'update_profile' %}">profile view</a>
+{{message}}
+
+ <a href="{% url 'logout' %}">Logout</a>
+
+
+
+{% for article in article %}
+
+<h4><a href="{% url 'article_preview' pk=article.pk %}"> {{article.title}}</a></h4>
+    <p>author:{{article.author}}</p>
+    <p>{{article.data}}</p>
+
+    <p>published_date: {{article.published_date}}</p>
+
+
+{% endfor %}
+
+{% include 'pie_chart.html' %}

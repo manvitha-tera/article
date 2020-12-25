@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'register' %}"  method="post">
+    {% csrf_token %}
+    <table align="center", border="1">
+        <tr>
+            <th colspan="2">Registration Page</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" placeholder="FirstName" name="first_name" required>
+            </td>
+            <td>
+                <input type="text" placeholder="LastName" name="last_name" required>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <input  type="text"  placeholder="UserName" name="username" style="width: -webkit-fill-available;" required>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="email" placeholder="Email" name="email" style="width: -webkit-fill-available;" required>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="password" placeholder="Password" name="password" style="width: -webkit-fill-available;" required>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <button type="submit">Register</button>
+            </th>
+        </tr>
+
+    </table>
+</form>
+<h4 align="center" style="color: green">{{ message }}</h4>
+<h4 align="center" style="color: blue"><a href="{% url 'login_view' %}">If Existing User Please login</a></h4>
+
+</body>
+</html>

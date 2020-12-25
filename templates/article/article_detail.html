@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Article Preview</h1>
+<a href="{% url 'logout' %}">Logout</a>
+<a href="{% url 'article_create' %}">create Article</a>
+<a href="{% url 'article_update' pk=article.pk %}">Update Article</a>
+<a href="{% url 'article_delete' pk=article.pk %}">Delete Article</a>
+{% if article.published_date %}
+    <p>published_date: {{article.published_date}}</p>
+{% else %}
+    <a href="{% url 'publish_article' pk=article.pk %}">Publish Article</a>
+{% endif %}
+    <p>author: {{article.author}}</p>
+    <p>topic: {{article.topic}}</p>
+    <p>title: {{article.title}}</p>
+    <p>data: {{article.data}}</p>
+    <p>created_on: {{article.created_on}}</p>
+
+</body>
+
+<h4 align="center" > <a href="{% url 'dashboard' %}" >Dashboard</a> </h4>
+</html>

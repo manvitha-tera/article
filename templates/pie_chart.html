@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+          animationEnabled: true,
+          title: {
+            text: "Dashboard of Articles",
+          },
+          data: [
+            {
+              type: "pie",
+              startAngle: 240,
+              yValueFormatString: '##0',
+              indexLabel: "{label} {y}",
+              dataPoints: [
+                  {% for k,v in graph.items %}
+                    { y: {{ v }}, label: '{{ k }}' },
+                  {% endfor %}
+              ],
+            },
+          ],
+        });
+        chart.render();
+      };
+    </script>
+  </head>
+  <body>
+    <div
+      id="chartContainer"
+      style="height: 300px; max-width: 920px; margin: 0px auto;"
+    ></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  </body>
+</html>

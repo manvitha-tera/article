@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+ <a href="{% url 'logout' %}">Logout</a>
+<form  method="post" >{% csrf_token %}
+
+    {% for field in article %}
+        <p>{{ field.label_tag }}</p>
+        <p>{{ field }}</p>
+    {% endfor %}
+
+    <button type="submit">SUBMIT</button>
+    <!--<table align="center" border="1">-->
+         <!--<tr>-->
+            <!--<th colspan="2">Create Article</th>-->
+        <!--</tr>-->
+
+       <!--<tr>-->
+           <!--<td>Topic</td>-->
+           <!--<td>{{form.topic}}</td>-->
+       <!--</tr>-->
+        <!--<tr>-->
+            <!--<td>Title</td>-->
+            <!--<td>{{form.title}}</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td>Data</td>-->
+            <!--<td>{{form.data}}</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<th align="center" colspan="2"> <button type="submit">SUBMIT</button></th>-->
+        <!--</tr>-->
+    <!--</table>-->
+
+
+
+
+</form>
+</body>
+</html>

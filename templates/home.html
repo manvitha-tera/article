@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<table align="center" border="1">
+         <tr>
+            <th colspan="2">Create Article</th>
+        </tr>
+        <tr>
+            <td>Author</td>
+            <td><input type="text" readonly name="user" value="{{ request.user }}" aria-readonly="true"></td>
+        </tr>
+
+        <td>Topic</td>
+        <td>{{form.topic}}</td>
+
+        <tr>
+            <td>Title</td>
+            <td>{{form.title}}</td>
+        </tr>
+        <tr>
+            <td>Data</td>
+            <td>{{form.data}}</td>
+        </tr>
+
+    </table>
+</body>
+</html>

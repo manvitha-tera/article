@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+ <a href="{% url 'logout' %}">Logout</a>
+{% for article in articles %}
+
+    <h1><a href="{% url 'article_preview' pk=article.pk %}"> {{article.title}}</a></h1>
+    <p>author:{{article.author}}</p>
+    <p>{{article.data}}</p>
+
+    <p>published_date: {{article.published_date}}</p>
+
+{% endfor %}
+
+</body>
+</html>
